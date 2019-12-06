@@ -3,7 +3,9 @@ import axios from 'axios'
 import styled from 'styled-components'
 
 import './App.css';
+
 import PlayerList from './components/player-list';
+import '../src/css/dark.css'
 
 const AppCon = styled.div`
   display: flex;
@@ -18,6 +20,38 @@ const AppCon = styled.div`
     flex-direction: column;
     justify-content: center;
     text-align: center;
+
+    .titleBottom {
+      display: flex;
+      justify-content: center;
+
+      .toggleCon {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-left: 1em;
+
+        .dark-mode__toggle {
+          background: none;
+          border: 0.15em solid #222;
+          border-radius: 50px;
+          height: 24px;
+          position: relative;
+          width: 42px;
+
+          .toggle {
+            background: #222;
+            border-radius: 50px;
+            height: 19px;
+            top: 2px;
+            left: 3px;
+            position: absolute;
+            transition: 0.4s;
+            width: 19px;
+          }
+        }
+      }
+    }
   }
 `;
 
@@ -27,7 +61,8 @@ export default class App extends Component {
     super();
 
     this.state = {
-      players: []
+      players: [],
+      darkMode: false,
     }
   }
 
@@ -42,9 +77,17 @@ export default class App extends Component {
       <AppCon>
         <div className="appTitle">
           <h1>Women's World Cup players ranked by search interest from Google Trends</h1>
-          <h3>June-July 2019</h3>
+          <div className="titleBottom">
+            <h3>June-July 2019</h3>
+            <div className="toggleCon">
+              <div className="dark-mode__toggle">
+                <div className="toggle" />
+              </div>
+            </div>
+          </div>
         </div>
         <PlayerList players={this.state.players} />
+
       </AppCon>
     )
   }
