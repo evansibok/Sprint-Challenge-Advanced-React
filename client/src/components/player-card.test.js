@@ -6,7 +6,7 @@ import PlayerCard from './player-card';
 
 afterEach(rtl.cleanup)
 
-it('renders without crashing & displays country text', () => {
+it('displays country text', () => {
 	// const wrapper = rtl.render(<PlayerCard />)
 	// wrapper.debug()
 

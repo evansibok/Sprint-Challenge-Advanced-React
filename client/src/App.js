@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import styled from 'styled-components'
-
 import './App.css';
 
 import PlayerList from './components/player-list'
@@ -35,7 +34,7 @@ export default class App extends Component {
     super();
 
     this.state = {
-      players: []
+      players: [],
     }
   }
 

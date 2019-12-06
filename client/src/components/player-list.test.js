@@ -3,15 +3,27 @@ import * as rtl from '@testing-library/react'
 import '@testing-library/jest-dom/extend-expect'
 import PlayerList from './player-list'
 
+jest.mock('axios', () => ({
+	get: (url) => Promise.resolve({
+		players: []
+	})
+}))
+
 afterEach(rtl.cleanup)
 
-it('renders without crashing', () => {
+it('displays player name', () => {
+	const players = [{
+		"name": "Alex Morgan",
+		"country": "United States",
+		"searches": 100,
+		"id": 0
+	}];
 
-	// const wrapper = rtl.render(<PlayerList />)
-	// wrapper.debug()
+	const wrapper = rtl.render(<PlayerList players={players} />)
+	wrapper.debug()
 
-	// // const cardDisplayed = wrapper.getByText(/Carli Lloyd/i)
+	const propsText = wrapper.getByText(/Alex Morgan/i)
 
-	// // expect(cardDisplayed).toBeInTheDocument()
+	expect(propsText).toBeInTheDocument()
 
 })
