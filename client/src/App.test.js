@@ -8,7 +8,6 @@ afterEach(rtl.cleanup)
 
 it('renders without crashing & displays world cup text', () => {
   const wrapper = rtl.render(<App />)
-  wrapper.debug()
 
   const worldCupText = wrapper.queryByText(/world cup/i)
 
