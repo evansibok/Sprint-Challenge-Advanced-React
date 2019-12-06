@@ -1,0 +1,22 @@
+.dark-mode {
+  background: #252538;
+}
+.dark-mode .appTitle {
+  color: white;
+}
+.dark-mode .appTitle .titleBottom .toggleCon .dark-mode__toggle {
+  background: #273ed8;
+  border: 0.15em solid #273ed8;
+}
+.dark-mode .appTitle .titleBottom .toggleCon .dark-mode__toggle .toggle {
+  background: #fff;
+}
+.dark-mode .appTitle .titleBottom .toggleCon .dark-mode__toggle .toggled {
+  top: 2px;
+  left: 18px;
+}
+.dark-mode .cardContent {
+  background: #fff;
+}
+
+/*# sourceMappingURL=dark.css.map */
