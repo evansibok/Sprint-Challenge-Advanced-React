@@ -70,6 +70,17 @@ export default class App extends Component {
     axios.get(`http://localhost:5000/api/players`).then(res => this.setState({ players: res.data })).catch(err => err)
   }
 
+  componentDidUpdate() {
+    this.state.darkMode
+      ? document.querySelector("body").classList.add("dark-mode")
+      : document.querySelector("body").classList.remove("dark-mode");
+  }
+
+  toggleMode = (evt) => {
+    evt.preventDefault();
+    this.setState({ darkMode: !this.state.darkMode })
+  }
+
 
   render() {
 
@@ -80,8 +91,8 @@ export default class App extends Component {
           <div className="titleBottom">
             <h3>June-July 2019</h3>
             <div className="toggleCon">
-              <div className="dark-mode__toggle">
-                <div className="toggle" />
+              <div className="dark-mode__toggle" onClick={this.toggleMode}>
+                <div className={this.state.darkMode ? "toggle toggled" : "toggle"} />
               </div>
             </div>
           </div>
