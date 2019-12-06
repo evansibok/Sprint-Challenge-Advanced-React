@@ -1,0 +1,29 @@
+.dark-mode {
+  background: #252538;
+
+  .appTitle {
+    color: white;
+
+    .titleBottom {
+      .toggleCon {
+        .dark-mode__toggle {
+          background: #273ed8;
+          border: 0.15em solid #273ed8;
+
+          .toggle {
+            background: #fff;
+          }
+
+          .toggled {
+            top: 2px;
+            left: 18px;
+          }
+        }
+      }
+    }
+  }
+
+  .cardContent {
+    background: #fff;
+  }
+}
