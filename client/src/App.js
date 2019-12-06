@@ -30,8 +30,8 @@ const AppCon = styled.div`
 
 export default class App extends Component {
 
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     this.state = {
       players: [],

@@ -11,7 +11,7 @@ jest.mock('axios', () => ({
 
 afterEach(rtl.cleanup)
 
-it('displays player name', () => {
+it('renders and receives data from promise', () => {
 	const players = [{
 		"name": "Alex Morgan",
 		"country": "United States",
@@ -20,7 +20,6 @@ it('displays player name', () => {
 	}];
 
 	const wrapper = rtl.render(<PlayerList players={players} />)
-	wrapper.debug()
 
 	const propsText = wrapper.getByText(/Alex Morgan/i)
 
